@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <title>Portofolio Saya</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Website portofolio sederhana pure HTML">
+    <meta name="author" content="Brandon Junior">
+
+    <!-- Todo -->
+    <!-- 1. Tambahkan Tag Meta Viewport -->
+    <!-- 2. Aplikasikan penggunaan CSS dengan metode Internal & Eksternal -->
+    <!-- 3. Tambahkan Background dan Font Color sesuai selera agar web mu terlihat hidup -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    /* Styling Dasar & Background */
+    body {
+        background-color: #efefef; 
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #333;
+    }
+
+    header {
+        text-align: center;
+        padding: 20px;
+        background-color: #c2c2c2;
+        
+    }
+
+    header h1 {
+        color: blue;
+        text-decoration: underline;
+    }
+
+    header nav a {
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+    }
+
+    .container {
+        background-color: white;
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 30px;
+        border: 1px solid #ccc;
+        text-align: center; 
+        border-radius: 10px;
+    }
+
+    .container h2 {
+        color: black;               
+        border-bottom: 3px solid blue; 
+        display: inline-block;      
+        padding-bottom: 5px;        
+        margin-bottom: 20px;
+    }
+
+    .profile-img {
+        width: 150px;
+        border-radius: 10px;
+        margin-top: 15px;
+    }
+
+    .project-card img {
+        width: 100%;
+        max-width: 400px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        margin: 10px 0;
+    }
+
+    .btn {
+        background-color: blue;
+        color: white;
+        padding: 10px 25px;
+        text-decoration: none;
+        border-radius: 5px;
+        display: inline-block;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        margin-top: 30px;
+    }
+
+    .skills-wrapper {
+    display: block; 
+    text-align: left;
+    }
+
+    .skills-wrapper ul, .skills-wrapper ol {
+    padding-left: 20px;
+    }
+
+    @media (max-width: 768px) {
+        .container {
+            width: 90%;
+            margin: 10px auto;
+        }
+
+        #skills, #projects, #contact {
+            text-align: left !important;
+        }
+
+        .skills-wrapper {
+            display: block; 
+        }
+    }
+</style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Portofolio Saya</h1>
+        <nav>
+            <a href="#about">Tentang</a> |
+            <a href="#skills">Skill</a> |
+            <a href="#projects">Project</a> |
+            <a href="#contact">Kontak</a>
+        </nav>
+    </header>
+
+    <!-- Todo -->
+    <!-- 1. Gunakan Alignment Tengah untuk setiap section di Desktop -->
+    <!-- 2. Buat Container Pembungkus yang rapih dengan mengatur padding, border dan margin -->
+    <section id="hero" class="container">
+        <h2>Halo, Saya <span id="heroName">Inggil Lilo Prayogo</span></h2>
+        <p>Saya seorang <strong>Web Developer</strong> yang sedang belajar <em>HTML fundamental</em>.</p>
+        <img src="profile.jpg" alt="Foto Profil" class="profile-img">
+    </section>
+
+    <section id="about" class="container">
+        <h2>Tentang Saya</h2>
+        <div>
+            <p>
+                Saya tertarik pada dunia web development dan sedang fokus mempelajari HTML
+                sebagai dasar sebelum lanjut ke CSS dan JavaScript.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- Todo -->
+    <!-- 1. Mengapliksikan penggunaan CSS dengan metode inline -->
+    <!-- 2. Buatkan KHUSUS untuk section skills alignment element dan teksnya ke 'Kiri' -->
+    <section id="skills" class="container" style="text-align: left;">
+        <h2>Skill Saya</h2>
+        <div class="skills-wrapper">
+            <div>
+                <h3>Hard Skill</h3>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Soft Skill</h3>
+                <ol>
+                    <li>Problem Solving</li>
+                    <li>Communication</li>
+                    <li>Team Work</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Todo -->
+    <!-- 1. Dalam Viewport Mobile Semua Section mulai dari skills sampai contact, alignmentnya diubah jadi ke 'Kiri' -->
+    <!-- 2. Manfaatkan Media Queries -->
+    <section id="projects" class="container">
+        <h2>Project Saya</h2>
+        <div class="project-card">
+            <h3>Project 1</h3>
+            <img src="amazon.jpg" alt="Project Amazon">
+            <p>Website Amazon</p>
+            <a target="_blank" href="https://www.amazon.com/" class="btn">Lihat Detail</a>
+        </div>
+        <br>
+        <div class="project-card">
+            <h3>Project 2</h3>
+            <img src="chatgpt.png" alt="Project ChatGPT">
+            <p>Website ChatGPT</p>
+            <a target="_blank" href="https://chatgpt.com/" class="btn">Lihat Detail</a>
+        </div>
+    </section>
+
+    <section id="contact" class="container">
+        <h2>Kontak Saya</h2>
+        <form id="contactForm" method="post">
+            <label for="nama">Nama:</label><br>
+            <input type="text" id="nama" name="nama"><br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email"><br><br>
+
+            <label for="pesan">Pesan:</label><br>
+            <textarea id="pesan" name="pesan"></textarea><br><br>
+
+            <label for="kategori">Kategori:</label><br>
+            <select id="kategori" name="kategori">
+                <option value="kerjasama">Kerjasama</option>
+                <option value="project">Project</option>
+                <option value="lainnya">Lainnya</option>
+            </select><br><br>
+
+            <button type="submit" class="btn">Kirim</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Inggil Lilo Prayogo. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            var namaInput = document.getElementById("nama").value;
+            var heroName = document.getElementById("heroName");
+
+            if(namaInput.trim() !== "") {
+                heroName.textContent = namaInput;
+            }
+        });
+    </script>
+</body>
+</html>

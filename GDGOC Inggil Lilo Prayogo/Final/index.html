@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinTrack Pro | Smart Finance Assistant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased">
+
+    <nav id="mainNav" class="flex justify-between items-center px-[8%] py-5 bg-white w-full sticky top-0 z-50 transition-all duration-300">
+        <div class="flex items-center gap-2">
+            <div class="bg-blue-600 p-2 rounded-lg text-white"><i class="fas fa-chart-pie"></i></div>
+            <span class="text-xl font-bold tracking-tight text-slate-800">FinTrack<span class="text-blue-600">Pro</span></span>
+        </div>
+        <ul class="hidden md:flex gap-8 font-medium text-slate-500">
+            <li><a href="#home" class="hover:text-blue-600 transition">Beranda</a></li>
+            <li><a href="#features" class="hover:text-blue-600 transition">Fitur</a></li>
+        </ul>
+    </nav>
+
+    <header id="home" class="relative h-[60vh] flex items-center justify-center text-center text-white px-4">
+        <div class="absolute inset-0 z-0">
+            <img src="image/bgweb.jpg" alt="Background" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-slate-900/75"></div>
+        </div>
+        <div class="relative z-10 max-w-3xl">
+            <h1 class="text-4xl md:text-5xl font-black mb-4">Rencanakan Finansialmu <br><span class="text-blue-400 italic">Tanpa Batas.</span></h1>
+            <p class="text-slate-300 mb-8">Konversi mata uang global, kelola budget harian, dan capai target menabungmu dalam satu aplikasi.</p>
+            <a href="#features" class="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-xl font-bold transition inline-block shadow-xl">Lihat Fitur</a>
+        </div>
+    </header>
+
+    <main id="features" class="py-16 px-[5%] max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-3 gap-8">
+            
+            <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 flex flex-col">
+                <h3 class="font-bold text-lg mb-6 flex items-center gap-2 text-blue-600">
+                    <i class="fas fa-coins"></i> Currency Converter
+                </h3>
+                <div class="space-y-5 flex-grow">
+                    <div>
+                        <label class="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-1">Jumlah</label>
+                        <input type="number" id="convAmount" value="1" class="w-full mt-1 p-4 bg-slate-50 rounded-2xl outline-none border border-transparent focus:border-blue-400 focus:bg-white transition-all font-semibold">
+                    </div>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="flex flex-col">
+                            <label class="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-1">Dari</label>
+                            <select id="fromCurr" class="w-full mt-1 p-4 bg-slate-50 rounded-2xl outline-none border border-transparent focus:border-blue-400 focus:bg-white transition-all appearance-none cursor-pointer"></select>
+                        </div>
+                        <div class="flex flex-col">
+                            <label class="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-1">Ke</label>
+                            <select id="toCurr" class="w-full mt-1 p-4 bg-slate-50 rounded-2xl outline-none border border-transparent focus:border-blue-400 focus:bg-white transition-all appearance-none cursor-pointer"></select>
+                        </div>
+                    </div>
+                    <button onclick="convert()" class="w-full py-4 bg-blue-600 text-white font-black rounded-2xl hover:bg-blue-700 transition-transform active:scale-[0.95] shadow-lg shadow-blue-100 uppercase tracking-wider text-sm">
+                        Konversi Sekarang
+                    </button>
+                    <div id="resultArea" class="mt-4 p-5 bg-blue-50 rounded-2xl border-2 border-dashed border-blue-100 min-h-[90px] flex items-center justify-center text-center">
+                        <p id="convResult" class="text-blue-900 font-bold leading-relaxed">Hasil akan muncul di sini</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100">
+                <h3 class="font-bold text-lg mb-6 flex items-center gap-2 text-emerald-600">
+                    <i class="fas fa-wallet"></i> Budget Planner (50/30/20)
+                </h3>
+                <div class="space-y-4">
+                    <div>
+                        <label class="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-1">Total Pemasukan (IDR)</label>
+                        <input type="number" id="incomeInput" placeholder="Contoh: 5000000" class="w-full mt-1 p-4 bg-slate-50 rounded-2xl outline-none border border-transparent focus:border-emerald-400 transition-all">
+                    </div>
+                    <button onclick="planBudget()" class="w-full py-4 bg-emerald-600 text-white font-black rounded-2xl hover:bg-emerald-700 transition-transform active:scale-[0.95]">Bagi Alokasi</button>
+                    <div id="budgetResult" class="space-y-2 pt-2 text-sm">
+                        </div>
+                </div>
+            </div>
+
+            <div class="bg-slate-900 p-6 rounded-3xl shadow-xl text-white flex flex-col justify-between">
+                <div>
+                    <h3 class="font-bold text-lg mb-6 flex items-center gap-2 text-yellow-400">
+                        <i class="fas fa-bullseye"></i> Savings Goal
+                    </h3>
+                    <div class="space-y-4">
+                        <input type="text" id="goalName" placeholder="Nama Barang (ex: MacBook)" class="w-full p-3 bg-white/10 rounded-xl outline-none border border-white/5 focus:border-yellow-400 transition">
+                        <input type="number" id="goalTarget" placeholder="Target Harga (IDR)" class="w-full p-3 bg-white/10 rounded-xl outline-none border border-white/5 focus:border-yellow-400 transition">
+                        <input type="number" id="currentSave" placeholder="Uang Terkumpul Saat Ini (IDR)" class="w-full p-3 bg-white/10 rounded-xl outline-none border border-white/5 focus:border-yellow-400 transition">
+                        <button onclick="calculateGoal()" class="w-full py-3 bg-yellow-500 text-slate-900 font-bold rounded-xl hover:bg-yellow-400 transition active:scale-[0.95]">Update Progress</button>
+                    </div>
+                </div>
+                <div id="progressContainer" class="mt-8 hidden">
+                    <div class="flex justify-between text-xs mb-2">
+                        <span id="displayGoalName">Progress</span>
+                        <span id="percentText">0%</span>
+                    </div>
+                    <div class="w-full bg-white/10 rounded-full h-3">
+                        <div id="progressBar" class="bg-yellow-500 h-3 rounded-full transition-all duration-1000" style="width: 0%"></div>
+                    </div>
+                    <p id="goalSummary" class="text-[11px] mt-3 text-slate-400 italic text-center"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-12 bg-white p-8 rounded-3xl border border-slate-100 shadow-sm">
+            <h3 class="font-bold text-lg mb-6 tracking-tight">Pasar Mata Uang Hari Ini (IDR)</h3>
+            <div id="popularRates" class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                </div>
+        </div>
+
+        <footer class="py-16 mt-10 border-t border-slate-100 bg-white">
+            <div class="max-w-4xl mx-auto text-center px-6">
+                <div class="mb-8">
+                    <i class="fas fa-quote-left text-blue-200 text-3xl mb-4"></i>
+                    <p id="financialTip" class="text-xl font-medium text-slate-700 italic leading-relaxed">
+                        "Memuat inspirasi keuangan..."
+                    </p>
+                </div>
+                <div class="h-px w-16 bg-slate-200 mx-auto mb-6"></div>
+                <p class="text-slate-400 text-xs tracking-widest uppercase">
+                    &copy; 2026 Inggil Lilo Prayogo - GDGoC UIN Jakarta
+                </p>
+            </div>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

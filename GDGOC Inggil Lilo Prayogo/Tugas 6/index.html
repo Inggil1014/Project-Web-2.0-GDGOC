@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <title>Portofolio Saya - Tailwind Version</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="md:bg-[#f1f5f9] bg-white text-[#1e293b] font-sans leading-relaxed">
+    <!-- TODO: Tambahkan sebuah section baru untuk "Programming Joke of the Day", it's up to u guys mau ditaro diurutan mana
+     Requirements:
+     - Gunakan id="jokes" atau bisa disesuaikan (tapi jangan lupa ubah juga di javascriptnya yaa)
+     - Harus ada container untuk menampilkan teks joke
+     - Tambahkan button untuk refresh joke
+     - Gunakan styling Tailwind yh
+    -->
+
+    <header style="text-align: center;" class="bg-white/80 backdrop-blur-md py-6 border-b-2 border-[#e2e8f0] sticky top-0 z-50">
+        <h1 class="text-3xl font-bold text-[#2563eb] mb-2">Portofolio Saya</h1>
+        <nav class="flex justify-center gap-4 font-semibold text-[#64748b]">
+            <a href="#about" class="hover:text-[#2563eb] transition-colors">Tentang</a> |
+            <a href="#skills" class="hover:text-[#2563eb] transition-colors">Skill</a> |
+            <a href="#projects" class="hover:text-[#2563eb] transition-colors">Project</a> |
+            <a href="#contact" class="hover:text-[#2563eb] transition-colors">Kontak</a>
+        </nav>
+    </header>
+
+    <section id="hero" class="max-w-[900px] mx-auto my-10 p-12 bg-white rounded-2xl md:shadow-lg grid grid-cols-1 md:grid-cols-[1fr_200px] gap-y-4 gap-x-8 items-center">
+        <h2 class="text-4xl font-extrabold text-[#0f172a] md:col-start-1 leading-tight">
+            Halo, Saya <br/> <span id="heroName" class="text-[#2563eb]">Inggil Lilo Prayogo</span>
+        </h2>
+        <p class="text-lg text-[#64748b] md:col-start-1">
+            Saya seorang <strong class="text-[#1e293b]">Web Developer</strong> yang sedang belajar <em class="italic">HTML fundamental</em>.
+        </p>
+        <img src="./img/profile.jpg" alt="Foto Profil" 
+             class="w-[200px] h-[200px] object-cover rounded-3xl border-4 border-[#2563eb] shadow-lg md:col-start-2 md:row-start-1 md:row-span-2 rotate-2 hover:rotate-0 transition-transform duration-300 mx-auto md:mx-0">
+    </section>
+
+    <section id="about" class="max-w-[900px] mx-auto my-10 p-12 bg-white rounded-2xl md:shadow-lg">
+        <h2 class="text-2xl font-bold border-b-4 border-[#2563eb] inline-block pb-1 mb-6 text-[#1e293b]">Tentang Saya</h2>
+        <div>
+            <p class="text-[#475569] text-lg">
+                Saya tertarik pada dunia web development dan sedang fokus mempelajari HTML
+                sebagai dasar sebelum lanjut ke CSS dan JavaScript.
+            </p>
+        </div>
+    </section>
+
+    <section id="skills" class="max-w-[900px] mx-auto my-10 p-12 bg-white rounded-2xl md:shadow-lg">
+        <h2 class="text-2xl font-bold border-b-4 border-[#2563eb] inline-block pb-1 mb-6 text-[#1e293b]">Skill Saya</h2>
+        <div class="flex flex-col md:flex-row justify-between gap-8 mt-4 text-left">
+            <div class="flex-1 p-6 bg-[#f8fafc] rounded-xl border border-[#e2e8f0]">
+                <h3 class="text-xl font-bold mb-4 text-[#2563eb]">Hard Skill</h3>
+                <ul id="hard-skill-container" class="list-disc list-inside space-y-2 text-[#475569]">
+                </ul>
+            </div>
+            <div class="flex-1 p-6 bg-[#f8fafc] rounded-xl border border-[#e2e8f0]">
+                <h3 class="text-xl font-bold mb-4 text-[#2563eb]">Soft Skill</h3>
+                <ol id="soft-skill-container" class="list-decimal list-inside space-y-2 text-[#475569]">
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="max-w-[900px] mx-auto my-10 p-12 bg-white rounded-2xl md:shadow-lg">
+        <h2 class="text-2xl font-bold border-b-4 border-[#2563eb] inline-block pb-1 mb-8 text-[#1e293b]">Project Saya</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="group border border-[#e2e8f0] p-6 rounded-2xl hover:border-[#2563eb] hover:-translate-y-2 transition-all duration-300">
+                <h3 class="text-xl font-bold mb-4">Project 1</h3>
+                <img src="./img/amazon.jpg" alt="Project Amazon" class="w-full h-48 object-cover rounded-xl mb-4 border border-[#ddd]">
+                <p class="mb-6 text-[#64748b]">Website Amazon</p>
+                <a target="_blank" href="https://www.amazon.com/" 
+                   class="inline-block bg-[#2563eb] text-white px-6 py-3 rounded-lg font-bold hover:bg-[#f59e0b] hover:shadow-[0_4px_12px_rgba(245,158,11,0.3)] transition-all">
+                   Lihat Detail
+                </a>
+            </div>
+            <div class="group border border-[#e2e8f0] p-6 rounded-2xl hover:border-[#2563eb] hover:-translate-y-2 transition-all duration-300">
+                <h3 class="text-xl font-bold mb-4">Project 2</h3>
+                <img src="./img/chatgpt.png" alt="Project ChatGPT" class="w-full h-48 object-cover rounded-xl mb-4 border border-[#ddd]">
+                <p class="mb-6 text-[#64748b]">Website ChatGPT</p>
+                <a target="_blank" href="https://chatgpt.com/" 
+                   class="inline-block bg-[#2563eb] text-white px-6 py-3 rounded-lg font-bold hover:bg-[#f59e0b] hover:shadow-[0_4px_12px_rgba(245,158,11,0.3)] transition-all">
+                   Lihat Detail
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="max-w-[900px] mx-auto my-10 p-12 bg-white rounded-2xl md:shadow-lg">
+        <h2 class="text-2xl font-bold border-b-4 border-[#2563eb] inline-block pb-1 mb-8 text-[#1e293b]">Kontak Saya</h2>
+        <form id="contactForm" method="post" class="space-y-4">
+            <div>
+                <label for="nama" class="block font-semibold mb-1">Nama:</label>
+                <input type="text" id="nama" name="nama" class="w-full p-3 border border-[#cbd5e1] rounded-lg focus:ring-2 focus:ring-[#2563eb] focus:border-transparent outline-none transition">
+            </div>
+            <div>
+                <label for="email" class="block font-semibold mb-1">Email:</label>
+                <input type="email" id="email" name="email" class="w-full p-3 border border-[#cbd5e1] rounded-lg focus:ring-2 focus:ring-[#2563eb] focus:border-transparent outline-none transition">
+            </div>
+            <div>
+                <label for="pesan" class="block font-semibold mb-1">Pesan:</label>
+                <textarea id="pesan" name="pesan" class="w-full p-3 border border-[#cbd5e1] rounded-lg h-32 outline-none focus:ring-2 focus:ring-[#2563eb] transition"></textarea>
+            </div>
+            <div>
+                <label for="kategori" class="block font-semibold mb-1">Kategori:</label>
+                <select id="kategori" name="kategori" class="w-full p-3 border border-[#cbd5e1] rounded-lg bg-white outline-none">
+                    <option value="kerjasama">Kerjasama</option>
+                    <option value="project">Project</option>
+                    <option value="lainnya">Lainnya</option>
+                </select>
+            </div>
+            <button type="submit" class="w-full md:w-auto bg-[#2563eb] text-white px-10 py-4 rounded-xl font-bold hover:bg-[#f59e0b] hover:scale-105 transition-all shadow-md">
+                Kirim Pesan
+            </button>
+        </form>
+    </section>
+
+    <section id="jokes" class="max-w-[900px] mx-auto my-10 p-12 bg-white rounded-2xl md:shadow-lg  relative overflow-hidden">
+        <div class="absolute left-0 top-0 bottom-0 w-1.5 bg-blue-600"></div>
+    
+            <h3 class="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+                <span class="border-b-4 border-blue-600 pb-1">Programming Joke of the Day</span>
+            </h3>
+    
+        <div class="bg-slate-50 border border-slate-200 p-8 rounded-2xl min-h-[120px] flex items-center justify-center text-center">
+            <div id="jokeDisplay" class="text-slate-600 italic font-medium leading-relaxed">
+                Menyiapkan joke untukmu...
+            </div>
+        </div>
+    
+        <button onclick="getJoke()" class="mt-6 px-6 py-3 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 active:scale-95 transition shadow-md">
+            Kasih yang lain dong!
+        </button>
+    </section>
+
+    <footer class="bg-[#333333] text-white py-10 text-center mt-20">
+        <p class="opacity-80">&copy; 2026 Inggil Lilo Prayogo. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
